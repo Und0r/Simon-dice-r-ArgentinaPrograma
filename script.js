@@ -41,7 +41,7 @@ function comenzarRondaFacil() {
   const $nuevoCuadro = cuadroAleatorio();
   contadorMaquina.push($nuevoCuadro);
 
-  const RETRASO_TURNO_JUGADOR = (contadorMaquina.length + 1) * 1200;
+  const RETRASO_TURNO_JUGADOR = (contadorMaquina.length + 1) * 1000;
 
   contadorMaquina.forEach(function ($cuadro, index) {
     const RETRASO_MS = (index + 1) * 1200;
@@ -68,7 +68,7 @@ function comenzarRondaMedia() {
     const $nuevoCuadro = cuadroAleatorio();
     contadorMaquina.push($nuevoCuadro);
   
-    const RETRASO_TURNO_JUGADOR = (contadorMaquina.length + 1) * 800;
+    const RETRASO_TURNO_JUGADOR = (contadorMaquina.length + 1) * 1000;
   
     contadorMaquina.forEach(function ($cuadro, index) {
       const RETRASO_MS = (index + 1) * 800;
@@ -95,7 +95,7 @@ function comenzarRondaMedia() {
     const $nuevoCuadro = cuadroAleatorio();
     contadorMaquina.push($nuevoCuadro);
   
-    const RETRASO_TURNO_JUGADOR = (contadorMaquina.length + 1) * 500;
+    const RETRASO_TURNO_JUGADOR = (contadorMaquina.length + 1) * 1000;
   
     contadorMaquina.forEach(function ($cuadro, index) {
       const RETRASO_MS = (index + 1) * 500;
@@ -117,7 +117,7 @@ function comenzarRondaMedia() {
   
 function manejarRespuestaUsuarioFacil(e) {
   const $cuadro = e.target;
-  resaltar($cuadro, 500);
+  resaltar($cuadro, 700);
   contadorUsuario.push($cuadro);
 
   const $cuadroMaquina = contadorMaquina[contadorUsuario.length - 1];
@@ -176,7 +176,7 @@ function cuadroAleatorio() {
 }
 
 function actualizarRonda(ronda) {
-  document.querySelector("#rondas").textContent = "#" + ronda;
+  document.querySelector("#rondas").textContent = "Ronda #" + ronda;
 }
 
 function actualizarEstado(estado, error = false) {

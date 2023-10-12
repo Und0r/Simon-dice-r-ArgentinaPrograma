@@ -7,12 +7,21 @@
 }
 
 header {
-    background-color: blanchedalmond;
+    background-color: rgb(255, 255, 255);
 }
 
-h2 {
+h2,#dificultad {
     margin-left: 42%;
+    color: aliceblue;
     
+}
+
+#dificultad {
+    margin-top: 20px;
+}
+
+#turno, #rondas {
+    color: aliceblue;
 }
 
 #comenzar {
@@ -72,4 +81,8 @@ h2 {
 
 .oculto {
     display: none;
+}
+
+body, footer, header{
+    background-image: linear-gradient(to right, rgb(32, 32, 32), rgb(77, 35, 155));
 }
