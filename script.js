@@ -7,16 +7,16 @@ bloquearInputUsuario();
 
 
 function empezarJuego() {
- mostrarElementos();
+  ocultarElementos();
+ mostrarDificultad();
   reiniciarRonda();
   document.querySelector("#facil").onclick = comenzarRondaFacil;
   document.querySelector("#media").onclick = comenzarRondaMedia;
   document.querySelector("#dificil").onclick = comenzarRondaDificil;
 }
 
-function mostrarElementos(){
-    document.querySelector("#rondas").classList = "";
-    document.querySelector("#turno").classList = "";
+function mostrarDificultad(){
+   
     document.querySelector("#dificultad").classList = "";
 }
 
@@ -32,8 +32,19 @@ function reiniciarRonda() {
   ronda = 0;
 }
 
+function mostrarElementos() {
+  document.querySelector("#turno").classList.remove("oculto");
+  document.querySelector("#rondas").classList.remove("oculto");
+}
+
+function ocultarElementos(){
+  document.querySelector("#turno").classList.add("oculto");
+  document.querySelector("#rondas").classList.add("oculto");
+}
+
 
 function comenzarRondaFacil() {
+  mostrarElementos();
   bloquearInputUsuario();
     ocultarDificultad();
   actualizarEstado("Turno PC");
@@ -61,6 +72,7 @@ function comenzarRondaFacil() {
 }
 
 function comenzarRondaMedia() {
+  mostrarElementos();
     bloquearInputUsuario();
     ocultarDificultad();
     actualizarEstado("Turno PC");
@@ -68,7 +80,7 @@ function comenzarRondaMedia() {
     const $nuevoCuadro = cuadroAleatorio();
     contadorMaquina.push($nuevoCuadro);
   
-    const RETRASO_TURNO_JUGADOR = (contadorMaquina.length + 1) * 1000;
+    const RETRASO_TURNO_JUGADOR = (contadorMaquina.length + 1) * 800;
   
     contadorMaquina.forEach(function ($cuadro, index) {
       const RETRASO_MS = (index + 1) * 800;
@@ -88,6 +100,7 @@ function comenzarRondaMedia() {
   }
 
   function comenzarRondaDificil() {
+    mostrarElementos();
     bloquearInputUsuario();
     ocultarDificultad();
     actualizarEstado("Turno PC");
@@ -95,7 +108,7 @@ function comenzarRondaMedia() {
     const $nuevoCuadro = cuadroAleatorio();
     contadorMaquina.push($nuevoCuadro);
   
-    const RETRASO_TURNO_JUGADOR = (contadorMaquina.length + 1) * 1000;
+    const RETRASO_TURNO_JUGADOR = (contadorMaquina.length + 1) * 500;
   
     contadorMaquina.forEach(function ($cuadro, index) {
       const RETRASO_MS = (index + 1) * 500;
@@ -183,11 +196,11 @@ function actualizarEstado(estado, error = false) {
   const $estado = document.querySelector("#turno");
   $estado.textContent = estado;
   if (error) {
-    $estado.classList.remove("alert-primary");
+    $estado.classList.remove("alert-light");
     $estado.classList.add("alert-danger");
   } else {
     $estado.classList.remove("alert-danger");
-    $estado.classList.add("alert-primary");
+    $estado.classList.add("alert-light");
   }
 }
 
@@ -223,7 +236,6 @@ function desbloquearInputUsuario(dificultad) {
 
 function perder() {
   bloquearInputUsuario();
-  reiniciarRonda();
   actualizarEstado(
     'Perdiste! Presiona "Jugar" para volver a intentarlo.',
     true

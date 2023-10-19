@@ -11,41 +11,73 @@
 </head>
 <header>
 
-    <div>
-        <h2>Presiona jugar para comenzar!</h2>
-
+    <div class="container-m text-center bg-success ">
+        <div class="row-m">
+        <h2 class="text-light">Presiona jugar para comenzar!</h2>
+    </div>
+        <div class="row-m">
+            <button type="button" id="comenzar" class="btn btn-light">Jugar!</button>
         </div>
-    <button id="comenzar">Jugar!</button>
+       
 
-
-<div id="dificultad" class="oculto">
-    Seleccione una dificultad
-    <button id="facil">Facil</button>
-    <button id="media">Media</button>
-    <button id="dificil">Dificil</button>
+<div class="row">
+    <div id="dificultad" class="oculto">
+        <p  class="text-light" >Seleccione una dificultad</p>
+   
+        <button type="button" id="facil" class="btn btn-light">Facil</button>
+    
+    
+        <button type="button" id="media" class="btn btn-light">Media</button>
+    
+        <button type="button" id="dificil" class="btn btn-light">Dificil</button>
+    
 </div>
+</div>
+   
+  </div>
 </header>
-<body>
+<body class="bg-secondary-subtle">
+    
+    
+  
+    <div class="container text-center w-25 p-2">
 
-
-    <div id="turno" class="oculto">
-      
-    </div>
-
-    <div id="rondas" class="oculto">
+   
+    <div id="rondas" class="alert alert-dark  oculto">
         #
+      
+      
+        
+          </div>
     </div>
+    
+     
 
-
-    <section id="simonDiceContainer">
-
+<div class="container text-center p-2" id="simonDiceContainer">
+    
+        <div class="row-xs justify-content-center">
         <input type="button" id="amarillo" class="cuadro">
         <input type="button" id="azul" class="cuadro">
+    </div>
+    <div class="row-xs  justify-content-center">
         <input type="button" id="rojo" class="cuadro">
         <input type="button" id="verde" class="cuadro">
-        
-    </section>
-  
+        </div>
+   
+
+</div>
+
+<div class="container text-center w-25 p-2">
+
+    <div id="turno"  class="alert alert-light  oculto">
+
+   
+    
+      
+        </div>
+</div>
+
+
 </body>
 <footer>
     <p></p>
