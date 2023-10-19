@@ -6,26 +6,78 @@
     <title>Simon Dice</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
     
 </head>
 <header>
 
-    <div id="state"> </div>
-    <button id="start">Empezar</button>
-    <div id="rounds">
-        <p>Ronda # </p>
+    <div class="container-m text-center bg-success ">
+        <div class="row-m">
+        <h2 class="text-light">Presiona jugar para comenzar!</h2>
     </div>
-</header>
-<body>
-    <section id="simonDiceContainer">
+        <div class="row-m">
+            <button type="button" id="comenzar" class="btn btn-light">Jugar!</button>
+        </div>
+       
 
-        <input type="button" id="yellow" class="cuadro">
-        <input type="button" id="blue" class="cuadro">
-        <input type="button" id="red" class="cuadro">
-        <input type="button" id="green" class="cuadro">
-        
-    </section>
+<div class="row">
+    <div id="dificultad" class="oculto">
+        <p  class="text-light" >Seleccione una dificultad</p>
+   
+        <button type="button" id="facil" class="btn btn-light">Facil</button>
+    
+    
+        <button type="button" id="media" class="btn btn-light">Media</button>
+    
+        <button type="button" id="dificil" class="btn btn-light">Dificil</button>
+    
+</div>
+</div>
+   
+  </div>
+</header>
+<body class="bg-secondary-subtle">
+    
+    
   
+    <div class="container text-center w-25 p-2">
+
+   
+    <div id="rondas" class="alert alert-dark  oculto">
+        #
+      
+      
+        
+          </div>
+    </div>
+    
+     
+
+<div class="container text-center p-2" id="simonDiceContainer">
+    
+        <div class="row-xs justify-content-center">
+        <input type="button" id="amarillo" class="cuadro">
+        <input type="button" id="azul" class="cuadro">
+    </div>
+    <div class="row-xs  justify-content-center">
+        <input type="button" id="rojo" class="cuadro">
+        <input type="button" id="verde" class="cuadro">
+        </div>
+   
+
+</div>
+
+<div class="container text-center w-25 p-2">
+
+    <div id="turno"  class="alert alert-light  oculto">
+
+   
+    
+      
+        </div>
+</div>
+
+
 </body>
 <footer>
     <p></p>
